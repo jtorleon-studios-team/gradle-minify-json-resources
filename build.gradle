@@ -44,3 +44,16 @@ afterEvaluate {
   println "identifier: $plugin_identifier";
   println "mainClass: $plugin_entry";
 }
+
+publishing {
+  repositories {
+    maven {
+      name = "GitHubPackages"
+      url = uri("https://maven.pkg.github.com/jtorleon-studios-team/gradle-minify-json-resources")
+      credentials {
+        username = System.getenv("USERNAME")
+        password = System.getenv("TOKEN")
+      }
+    }
+  }
+}
