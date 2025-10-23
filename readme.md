@@ -1,17 +1,31 @@
 # Gradle Plugin : Minify Json Resources
 
-- License: MIT
+Minify Json Resources is a Gradle plugin that allows you to **minify JSON files** in your project.
 
-## Install
+- **License:** MIT
+- **Author:** JTorleon Studios Team
+- **Public Maven Repository:** https://jtorleon-studios-team-github-io.pages.dev/
 
-- clone the project
-- execute the task publishToMavenLocal
-- edit your build.gradle and add the plugin
+## Installation
+
+Add the public Maven repository in your `settings.gradle`:
+
+```groovy
+pluginManagement {
+  repositories {
+    maven {
+      url = 'https://jtorleon-studios-team-github-io.pages.dev/'
+    }
+  }
+}
+
+```
+
+Then apply the plugin in your `build.gradle`:
+
 
 ```groovy
 plugin {
   id 'gradle-minify-json-resources' version '1.0.0'
 }
 ```
-
-more soon...
