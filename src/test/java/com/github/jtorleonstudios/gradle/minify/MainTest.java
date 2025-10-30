@@ -1,4 +1,4 @@
-package com.github.tmslpm.gradle.minify;
+package com.github.jtorleonstudios.gradle.minify;
 
 import org.gradle.testkit.runner.BuildTask;
 import org.gradle.testkit.runner.GradleRunner;
@@ -15,7 +15,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class MinifyJsonTaskTest {
+class MainTest {
   @TempDir
   public File rootProjectDir;
   public File fileSettingsGradle;
@@ -49,18 +49,20 @@ class MinifyJsonTaskTest {
   }
 
   @Test
-  public void testPluginIsAppliedAndTaskIsRegistered() throws IOException {
+  public void testPluginIsAppliedAndWork() throws IOException {
     // Create a temporary build file
     Path buildFile = rootProjectDir.toPath().resolve("build.gradle");
     Files.write(buildFile, String.format("""
-            plugins { id '%s' }
+            plugins {
+              id '%s'
+            }
         """, Main.PLUGIN_IDENTIFIER).getBytes());
 
     assertEquals(TaskOutcome.SUCCESS, Optional.ofNullable(GradleRunner.create()
             .withProjectDir(rootProjectDir)
-            .withArguments(MinifyJsonTask.NAME)
+            .withArguments("help")
             .withPluginClasspath()
-            .build().task(":" + MinifyJsonTask.NAME))
+            .build().task(":" + "help"))
         .map(BuildTask::getOutcome)
         .orElse(TaskOutcome.FAILED));
   }

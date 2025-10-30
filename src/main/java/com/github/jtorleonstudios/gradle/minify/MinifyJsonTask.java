@@ -1,4 +1,4 @@
-package com.github.tmslpm.gradle.minify;
+package com.github.jtorleonstudios.gradle.minify;
 
 import groovy.json.JsonOutput;
 import groovy.json.JsonParserType;

@@ -1,11 +1,10 @@
-package com.github.tmslpm.gradle.minify;
+package com.github.jtorleonstudios.gradle.minify;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.TaskContainer;
 
-import java.util.List;
 import java.util.Map;
 
 public class Main implements Plugin<Object> {
